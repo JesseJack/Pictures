@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block title %}index page{% end %}
+
+{% block content %}
+I am explore page<br>
+{% for num in range(1,5) %}
+<img src="/static/image/{{ num }}.jpg" width="200px" />
+{% end %}
+{% end %}
