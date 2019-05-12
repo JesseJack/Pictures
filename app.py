@@ -1,7 +1,7 @@
 import tornado.options
 from tornado.options import define, options
 
-from handlers.main import IndexHandler, ExploreHandler, PostHandler
+from handlers.main import IndexHandler, ExploreHandler, PostHandler,UploadHandler
 
 define('port', default='8000', help='Listening port', type=int)
 
@@ -12,6 +12,7 @@ class Application(tornado.web.Application):
             (r"/", IndexHandler),
             (r"/explore", ExploreHandler),
             (r"/post/(?P<post_id>[0-9]+)", PostHandler),
+            (r"/upload", UploadHandler),
         ]
         settings = dict(
             debug=True,
